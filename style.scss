@@ -1,0 +1,166 @@
+
+$white:#fff;
+$deep_gray : #6f6f6f;
+$gray : #aaa;
+$black :#242424;
+$yellow :#ffdc00;
+$font-style:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+$baseSize: 12px;
+@function font($level: 1) {
+  @return $baseSize *$level;
+}
+@import "node_modules/normalize-scss/sass/normalize";
+// @import "node_modules/@fontawesome/fontawesome-free/scss/fontawesome";
+
+body{
+    background-color:$white;
+    font-size:font(1.1);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+button{
+  box-shadow:  0px 0px 0px;
+  outline: none;
+  border:0px;
+  border-radius: 0px;
+  &:focus{
+    outline: none;
+    border-color:transparent;
+    box-shadow:  0px 0px 0px;
+    outline: 0px dotted!important;
+    outline: 0px auto -webkit-focus-ring-color!important;
+  }
+}
+ul{
+  padding:0px;
+  margin:0px;
+}
+li{
+  list-style-type: none;
+}
+input{
+  width:100%;
+  padding:8px 15px;
+  &:focus{
+    outline: none;
+    border-color:transparent;
+    box-shadow:  0px 0px 0px;
+    outline: 0px dotted!important;
+    outline: 0px auto -webkit-focus-ring-color!important;
+  }
+}
+.login{
+
+  &--Bg{
+      height:100vh;
+      display: block;
+      width:100%;
+      background-size:cover;
+      background-position: center bottom;
+      background-image: url('images/loginbg.png');
+  }
+  &__area{
+    height:100vh;
+    width: 100%;
+    display: flex;
+    padding:50px 0; 
+    flex-direction: column;
+    background: linear-gradient(50deg, rgba(48, 237, 245, 0.8 )19%, rgba( 40 ,136 ,203 , 0.48)64%);
+    position:relative;
+    transform:skewX(5deg);
+    box-shadow:-5px -5px 30px #175be4;
+    text-align: center;
+  }
+  &--logo{
+    img{
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
+  }
+  &__box{
+    padding:0px 10%;
+    .nav-pills{
+      display: flex;
+      margin-bottom: 10px;
+      li{
+        flex:1;
+        button{
+          width:100%;
+          &.nav-link{
+            border-top:5px solid #5ae4f6;
+            border-bottom:5px solid #02adc3;
+            border-right:5px solid #03b0c7;
+            border-left:5px solid #03b0c7;
+            border-radius: 0px;
+            color:$white;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: $font-style;
+            background: linear-gradient(50deg, #19e4fe 19%, #4271d1  64%);
+            &.active{
+              background: linear-gradient(50deg, #d55fe4 19%, #9f4cd2 64%);
+              background-color:#d55fe4;
+              border-top:5px solid #d6addc;
+              border-bottom:5px solid #8b3e95;
+              border-right:5px solid #9123a2;
+              border-left:5px solid #dfb7e5;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__form{
+    li{
+      input{
+        background-color:rgba( 255,255,255,0.4);
+        border:0px;
+        border-bottom: 2px solid #12aabd;
+        border-right:5px solid #5ae4f6;
+        margin:5px 0;
+        color:$black;
+        font-weight: bold;
+        &::placeholder{
+          color:$black;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  &--btn{
+    width:100%;
+    padding: 10px 20px;
+    border: 3px solid #4ec9ff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%, rgba(48, 237, 245, 1)), color-stop(50%, rgb(65 109 199)));
+
+    // background-color: #FF0000;
+    box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
+    -webkit-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
+    -moz-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
+    border-radius: 0px;
+    text-shadow: #2b4b8c 2px 2px 2px;
+    color: $white;
+    font-size: font(1.5);
+    text-transform: uppercase;
+    font-family: $font-style;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    cursor: pointer;
+    &:focus,
+    &:active{
+      border: 3px solid #4ec9ff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%, rgba(218, 248, 288,1)), color-stop(50%, #147cc7));
+
+    // background-color: #FF0000;
+    box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
+    -webkit-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
+    -moz-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
+    border-radius: 0px;
+    text-shadow: #2b4b8c 2px 2px 2px;
+      margin-top:5px;
+    }
+  }
+}
