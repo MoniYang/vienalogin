@@ -96,7 +96,7 @@ input{
       flex-direction: column;
       display: flex;
       line-height: 1.2;
-    
+      font-size:font(1.8);
       @include rwdw(480){
         margin-bottom: 0px;
         line-height: 1;
@@ -112,6 +112,10 @@ input{
     p{
       @include rwdw(767){
         margin-bottom: 0px;
+       
+      }
+      @include rwdw(480){
+        font-size:font(1.3);
       }
     }
   }
@@ -129,7 +133,7 @@ input{
       @include rwdw(480){
         max-width: 80px;
         margin-bottom: 0px;
-        margin-right: 5px;
+        margin:0 5px;
       }
     
     }
@@ -150,6 +154,16 @@ input{
     display: flex;
     flex-direction: column;
     flex:2;
+    p{
+      margin-bottom: 10px;
+      @include rwdw(480){
+        font-size:font(1.5);
+      }
+    }
+    @include rwdw(1280){
+      padding:0 5%;
+    }
+    
     @include rwdw(375){
       padding:0px 10px;
     }
@@ -267,7 +281,7 @@ input{
       line-height: 1;
     
     }
-    @include rwdw(480){
+    @include rwdw(375){
       font-size:font(2);
       margin-bottom: 5px;
       
@@ -279,7 +293,7 @@ input{
     background: linear-gradient(to bottom, #fb8d7e 0%,#ec6856 50%,#c85242 51%,#ec6856 100%); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    @include rwdw(480){
+    @include rwdw(375){
       font-size:font(2);
       margin-bottom: 5px;
       
