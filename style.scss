@@ -10,6 +10,13 @@ $baseSize: 12px;
 @function font($level: 1) {
   @return $baseSize *$level;
 }
+
+@mixin rwdw($max){
+  @media only screen and (max-width:$max+px) {
+      @content;
+  }
+}
+
 @import "node_modules/normalize-scss/sass/normalize";
 // @import "node_modules/@fontawesome/fontawesome-free/scss/fontawesome";
 
@@ -50,60 +57,134 @@ input{
   }
 }
 .login{
-
   &--Bg{
       height:100vh;
       display: block;
+      overflow: hidden;
       width:100%;
       background-size:cover;
       background-position: center bottom;
       background-image: url('images/loginbg.png');
+      @include rwdw(767){
+        background-image: url('images/loginbg_mobile.png');
+      }
   }
   &__area{
     height:100vh;
     width: 100%;
     display: flex;
-    padding:50px 0; 
+    padding:50px 0 0; 
     flex-direction: column;
-    background: linear-gradient(50deg, rgba(48, 237, 245, 0.8 )19%, rgba( 40 ,136 ,203 , 0.48)64%);
+    background: linear-gradient(50deg, rgb(252 182 44 / 61%) 19%, rgb(159 59 49) 64%);
     position:relative;
     transform:skewX(5deg);
-    box-shadow:-5px -5px 30px #175be4;
+    box-shadow:-5px -5px 30px #400d0c;
     text-align: center;
+    align-content: stretch;
+    @include rwdw(480){
+      padding:30px 0 0;
+    }
+    @include rwdw(375){
+      padding:10px 0 0;
+    }
+    @include rwdw(320){
+      font-size:font(1);
+    }
+    p{
+      margin-bottom: 0px;
+      color:$white;
+      flex-direction: column;
+      display: flex;
+      line-height: 1.2;
+    
+      @include rwdw(480){
+        margin-bottom: 0px;
+        line-height: 1;
+      }
+    }
+  }
+  &__top{
+    @include rwdw(767){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p{
+      @include rwdw(767){
+        margin-bottom: 0px;
+      }
+    }
   }
   &--logo{
     img{
-      max-width: 180px;
-      margin-bottom: 20px;
+      max-width: 150px;
+      margin-bottom:10px;
+     
+      @include rwdw(1024){
+        max-width: 120px;
+      }
+      @include rwdw(767){
+        margin-bottom: 0px;
+      }
+      @include rwdw(480){
+        max-width: 80px;
+        margin-bottom: 0px;
+        margin-right: 5px;
+      }
+    
+    }
+    p{
+      margin-bottom:0px;
+      color:$white;
+      font-size:font(1.8);
+      @include rwdw(991){
+        font-size:font(1.5);
+      }
+      @include rwdw(480){
+        font-size:font(1.2);
+      }
     }
   }
   &__box{
     padding:0px 10%;
+    display: flex;
+    flex-direction: column;
+    flex:2;
+    @include rwdw(375){
+      padding:0px 10px;
+    }
     .nav-pills{
       display: flex;
       margin-bottom: 10px;
+      @include rwdw(480){
+        margin-bottom: 5px;
+      }
       li{
         flex:1;
+
         button{
           width:100%;
           &.nav-link{
-            border-top:5px solid #5ae4f6;
-            border-bottom:5px solid #02adc3;
-            border-right:5px solid #03b0c7;
-            border-left:5px solid #03b0c7;
+            border-top:5px solid #bd5549;
+            border-bottom:5px solid #c85242;
+            border-right:5px solid #903027;
+            border-left:5px solid #c04a3e;
             border-radius: 0px;
             color:$white;
             text-transform: uppercase;
             font-weight: bold;
             font-family: $font-style;
-            background: linear-gradient(50deg, #19e4fe 19%, #4271d1  64%);
+            background: linear-gradient(50deg , #ec6856 19%, #a53d2f 64%);;
+            @include rwdw(480){
+              padding:0px;
+            }
             &.active{
-              background: linear-gradient(50deg, #d55fe4 19%, #9f4cd2 64%);
-              background-color:#d55fe4;
-              border-top:5px solid #d6addc;
-              border-bottom:5px solid #8b3e95;
-              border-right:5px solid #9123a2;
-              border-left:5px solid #dfb7e5;
+              background: linear-gradient(50deg, #eadb4f 19%, #f0a336 64%);
+              border-top:5px solid #eadb4f;
+              border-bottom:5px solid #d3943c;
+              border-right:5px solid #d08924;
+              border-left:5px solid #fff077;
+              color:$black;
             }
           }
         }
@@ -111,15 +192,22 @@ input{
     }
   }
   &__form{
+    @include rwdw(480){
+      margin-bottom: 5px;
+    }
     li{
       input{
-        background-color:rgba( 255,255,255,0.4);
+        background-color:rgb(253 239 106 / 62%);
         border:0px;
-        border-bottom: 2px solid #12aabd;
-        border-right:5px solid #5ae4f6;
+        border-bottom: 5px solid #cb9903;
+        border-right:5px solid #efc269;
         margin:5px 0;
         color:$black;
         font-weight: bold;
+        @include rwdw(480){
+          padding:3px 15px;
+          margin:3px;
+        }
         &::placeholder{
           color:$black;
           font-weight: bold;
@@ -130,17 +218,18 @@ input{
   &--btn{
     width:100%;
     padding: 10px 20px;
-    border: 3px solid #4ec9ff;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%, rgba(48, 237, 245, 1)), color-stop(50%, rgb(65 109 199)));
+    border:3px solid #bd5549;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffcbc4), color-stop(50%, #a53d2f));;
 
     // background-color: #FF0000;
-    box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
-    -webkit-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
-    -moz-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
+    box-shadow: 0px 7px 2px -5px #562216, inset 0px 0px 3px #562216;
+    -webkit-box-shadow: 0px 7px 2px -5px #562216, inset 0px 0px 3px #562216;
+    -moz-box-shadow: 0px 7px 2px -5px #562216, inset 0px 0px 3px #562216;
     border-radius: 0px;
-    text-shadow: #2b4b8c 2px 2px 2px;
+    text-shadow: #562216 2px 2px 2px;
     color: $white;
     font-size: font(1.5);
+    margin-bottom: 10px;
     text-transform: uppercase;
     font-family: $font-style;
     text-decoration: none;
@@ -149,18 +238,63 @@ input{
     -moz-transition: 0.2s;
     -o-transition: 0.2s;
     cursor: pointer;
+    @include rwdw(480){
+      padding:5px;
+      font-size:font(1.5);
+    }
     &:focus,
     &:active{
-      border: 3px solid #4ec9ff;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%, rgba(218, 248, 288,1)), color-stop(50%, #147cc7));
-
-    // background-color: #FF0000;
-    box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
-    -webkit-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
-    -moz-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #175be4;
-    border-radius: 0px;
-    text-shadow: #2b4b8c 2px 2px 2px;
+      border:3px solid #bd5549;
+      background:-webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffcbc4), color-stop(50%, #8b2113));;
+  
+      // background-color: #FF0000;
+      box-shadow: 0px 7px 2px -5px #562216, inset 0px 0px 3px #562216;
+      -webkit-box-shadow: 0px 7px 2px -5px #562216, inset 0px 0px 3px #562216;
+      -moz-box-shadow: 0px 7px 2px -5px #562216, inset 0px 0px 3px #562216;
+      border-radius: 0px;
+      text-shadow: #562216 2px 2px 2px;
       margin-top:5px;
+
+    }
+  }
+  &--point{
+    font-size:font(2.8);
+    font-weight: bold;
+    background: linear-gradient(to bottom, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include rwdw(767){
+      line-height: 1;
+    
+    }
+    @include rwdw(480){
+      font-size:font(2);
+      margin-bottom: 5px;
+      
+    }
+  }
+  &--point2{
+    font-size:font(2.8);
+    font-weight: bold;
+    background: linear-gradient(to bottom, #fb8d7e 0%,#ec6856 50%,#c85242 51%,#ec6856 100%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include rwdw(480){
+      font-size:font(2);
+      margin-bottom: 5px;
+      
+    }
+  }
+  &--socer{
+    display: none;
+    @include rwdw(767){
+      display: block;
+      margin-top:-10px;
+      margin-left:-20px;
+    }
+    img{
+      width: 100%;
     }
   }
 }
+
