@@ -108,6 +108,7 @@ input{
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
     p{
       @include rwdw(767){
@@ -121,19 +122,23 @@ input{
   }
   &--logo{
     img{
-      max-width: 150px;
+      // max-width: 150px;
       margin-bottom:10px;
-     
+      // border-radius: 100%;
       @include rwdw(1024){
-        max-width: 120px;
+        // max-width: 200px;
       }
       @include rwdw(767){
+        max-width:250px;
+
         margin-bottom: 0px;
       }
       @include rwdw(480){
-        max-width: 80px;
+        max-width:200px;
+
+        // max-width: 80px;
         margin-bottom: 0px;
-        margin:0 5px;
+        // margin:0 5px;
       }
     
     }
