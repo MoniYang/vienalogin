@@ -249,7 +249,7 @@ input:focus {
   background-color: transparent;
   background-position: center;
   background-size: cover;
-  background-image: url("../images/green_s_btn.png");
+  background-image: url("images/green_s_btn.png");
 }
 @media only screen and (max-width: 414px) {
   .login__box .nav-pills li button.nav-link {
@@ -274,7 +274,7 @@ input:focus {
   background-color: transparent;
   background-position: center;
   background-size: cover;
-  background-image: url("../images/red_s_btn.png");
+  background-image: url("images/red_s_btn.png");
 }
 .login__form {
   margin-bottom: 10px;
@@ -290,7 +290,7 @@ input:focus {
   width: 420px;
   background-size: cover;
   background-color: transparent;
-  background-image: url("../images/input_bg.png");
+  background-image: url("images/input_bg.png");
   margin: 5px 0;
   color: #242424;
   font-weight: bold;
@@ -311,7 +311,7 @@ input:focus {
   .login__form li input {
     height: 40px;
     width: 300px;
-    background-image: url("../images/input_bg_s.png");
+    background-image: url("images/input_bg_s.png");
   }
 }
 .login__form li input::-webkit-input-placeholder {
@@ -340,7 +340,7 @@ input:focus {
   height: 70px;
   background-size: cover;
   background-color: transparent;
-  background-image: url("../images/green_b_btn.png");
+  background-image: url("images/green_b_btn.png");
   border-radius: 0px;
   text-shadow: #562216 2px 2px 2px;
   color: #fff;
@@ -379,7 +379,7 @@ input:focus {
 .login--btn:focus, .login--btn:active {
   background-size: cover;
   background-color: transparent;
-  background-image: url("../images/red_b_btn.png");
+  background-image: url("images/red_b_btn.png");
   border-radius: 0px;
   margin-top: 5px;
   outline: none;
