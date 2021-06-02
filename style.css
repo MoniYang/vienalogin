@@ -57,14 +57,24 @@ input:focus {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+@media only screen and (max-width: 1366px) {
+  .login--Bg {
+    background-position: left bottom;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .login--Bg {
     background-position: 15% bottom;
+    background-image: url("images/loginbg_mid.png");
   }
 }
 @media only screen and (max-width: 991px) {
   .login--Bg {
     background-image: url("images/loginbg_mobile.png");
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    background-position: center;
   }
 }
 .login--Bg::-webkit-scrollbar {
@@ -89,19 +99,9 @@ input:focus {
           justify-content: center;
   text-align: center;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 991px) {
   .login__area {
-    padding: 30px 0 0;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .login__area {
-    padding: 30px 0 0;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .login__area {
-    padding: 10px 0 0;
+    padding: 50px 0 0;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -428,37 +428,31 @@ input:focus {
   position: absolute;
   margin-left: 20%;
   bottom: 10%;
+  display: none;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 991px) {
   .login__text2 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-left: 15%;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .login__text2 {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-left: 0px;
-    padding: 0 10px;
     bottom: 0px;
     position: relative;
     width: 100%;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
   }
 }
 @media only screen and (max-width: 480px) {
   .login__text2 {
-    padding: 0 5%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
@@ -478,13 +472,11 @@ input:focus {
 }
 @media only screen and (max-width: 991px) {
   .login__text2 img {
-    padding: 0 5px;
-    max-width: 50%;
+    max-width: 80%;
   }
 }
 @media only screen and (max-width: 480px) {
   .login__text2 img {
-    max-width: 240px;
     margin-bottom: 10px;
     width: 100%;
   }

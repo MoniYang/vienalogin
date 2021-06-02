@@ -67,11 +67,17 @@ input{
       background-image: url('images/loginbg.png');
       align-content: stretch;
       flex-wrap: wrap;
+      @include rwdw(1366){
+        background-position: left bottom;
+      }
       @include rwdw(1024){
         background-position: 15% bottom;
+        background-image: url('images/loginbg_mid.png');
       }
       @include rwdw(991){
         background-image: url('images/loginbg_mobile.png');
+        align-items: flex-start;
+        background-position: center;
       }
       &::-webkit-scrollbar{
         width:0px;
@@ -89,15 +95,10 @@ input{
     // box-shadow:-5px -5px 30px #400d0c;
     justify-content: center;
     text-align: center;
-    @include rwdw(1024){
-      padding:30px 0 0;
+    @include rwdw(991){
+      padding:50px 0 0;
     }
-    @include rwdw(480){
-      padding:30px 0 0;
-    }
-    @include rwdw(375){
-      padding:10px 0 0;
-    }
+   
     @include rwdw(320){
       font-size:font(1);
     }
@@ -393,27 +394,30 @@ input{
     position: absolute;
     margin-left: 20%;
     bottom: 10%;
+    display: none;
     @include rwdw(1366){
 
     }
     @include rwdw(1024){
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-left: 15%;
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: center;
+      // margin-left: 15%;
     }
     @include rwdw(991){
-      flex-wrap: nowrap;
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
       margin-left: 0px;
-      padding:0 10px;
+      // padding:0 10px;
       bottom:0px;
       position: relative;
       width: 100%;
-  
+      align-content: flex-end;
     }
     @include rwdw(480){
-      padding:0 5%;
+      // padding:0 5%;
       flex-wrap: wrap;
     }
     img{
@@ -425,11 +429,11 @@ input{
         max-width: 380px;
       }
       @include rwdw(991){
-        padding:0 5px;
-        max-width: 50%;
+        // padding:0 5px;
+        max-width: 80%;
       }
       @include rwdw(480){
-        max-width: 240px;
+        // max-width: 240px;
         margin-bottom: 10px;
         width:100%;
       }
