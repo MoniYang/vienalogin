@@ -68,10 +68,10 @@ input{
       align-content: stretch;
       flex-wrap: wrap;
       @include rwdw(1366){
-        background-position: left bottom;
+        // background-position: left bottom;
       }
       @include rwdw(1024){
-        background-position: 15% bottom;
+        // background-position: 15% bottom;
         background-image: url('images/loginbg_mid.png');
       }
       @include rwdw(991){
@@ -87,7 +87,7 @@ input{
     flex: 3;
     width: 100%;
     display: flex;
-    padding:50px 0 0; 
+    // padding:50px 0 0; 
     flex-direction: column;
     // background: linear-gradient(50deg, rgb(252 182 44 / 61%) 19%, rgb(159 59 49) 64%);
     position:relative;
@@ -96,7 +96,7 @@ input{
     justify-content: center;
     text-align: center;
     @include rwdw(991){
-      padding:50px 0 0;
+      padding:30px 0 0;
     }
    
     @include rwdw(320){
@@ -134,19 +134,18 @@ input{
   }
   &--logo{
     img{
-      // max-width: 150px;
+      max-width: 350px;
+      width: 100%;
       margin-bottom:10px;
       // border-radius: 100%;
-      @include rwdw(1024){
-        // max-width: 200px;
-      }
-      @include rwdw(767){
-        max-width:250px;
-
+      @include rwdw(991){
+        max-width:350px;
         margin-bottom: 0px;
+        // max-width: 360px;
       }
+     
       @include rwdw(480){
-        max-width:200px;
+        max-width:90%;
 
         // max-width: 80px;
         margin-bottom: 0px;
@@ -299,14 +298,14 @@ input{
     }
   }
   &--btn{
-    width: 420px;
+    // width: 420px;
     padding: 10px 20px;
     // border:3px solid #bd5549;
     // background:-webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffcbc4), color-stop(50%, #a53d2f));;
-    height:70px;
+    // height:70px;
     background-size:cover;
     background-color:transparent;
-    background-image: url('images/green_b_btn.png');
+    // background-image: url('images/green_b_btn.png');
     // background-color: #FF0000;
     // box-shadow: 0px 7px 2px -5px #562216, inset 0px 0px 3px #562216;
     // -webkit-box-shadow: 0px 7px 2px -5px #562216, inset 0px 0px 3px #562216;
@@ -330,9 +329,10 @@ input{
     }
    
     img{
-      max-height: 45px;
+      width: 100%;
+      // max-height: 45px;
       @include rwdw(414){
-        max-height: 30px;
+        // max-height: 30px;
       }
     }
     @include rwdw(480){
@@ -344,9 +344,9 @@ input{
     &:active{
       // border:3px solid #bd5549;
       // background:-webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffcbc4), color-stop(50%, #8b2113));;
-      background-size:cover;
-      background-color:transparent;
-      background-image: url('images/red_b_btn.png');
+      // background-size:cover;
+      // background-color:transparent;
+      // background-image: url('images/red_b_btn.png');
       // background-color: #FF0000;
      
       border-radius: 0px;
@@ -390,11 +390,12 @@ input{
   &__text2{
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
-    position: absolute;
-    margin-left: 20%;
-    bottom: 10%;
-    display: none;
+    justify-content:center;
+    flex-wrap: wrap;
+    // position: absolute;
+    // margin-left: 20%;
+    // bottom: 10%;
+    // display: none;
     @include rwdw(1366){
 
     }
@@ -416,21 +417,29 @@ input{
       width: 100%;
       align-content: flex-end;
     }
+    @include rwdw(768){
+      padding:0 12%;
+
+    }
+    @include rwdw(667){
+      padding:0px;
+    }
     @include rwdw(480){
       // padding:0 5%;
       flex-wrap: wrap;
     }
     img{
-      max-width: 450px;
+      max-width: 100%;
+      margin-bottom: 10px;
       @include rwdw(1366){
-        max-width: 450px;
+        // max-width: 450px;
       }
       @include rwdw(1024){
-        max-width: 380px;
+        // max-width: 380px;
       }
       @include rwdw(991){
         // padding:0 5px;
-        max-width: 80%;
+        // max-width: 80%;
       }
       @include rwdw(480){
         // max-width: 240px;
