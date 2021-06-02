@@ -57,7 +57,12 @@ input:focus {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1024px) {
+  .login--Bg {
+    background-position: 15% bottom;
+  }
+}
+@media only screen and (max-width: 991px) {
   .login--Bg {
     background-image: url("images/loginbg_mobile.png");
   }
@@ -385,27 +390,44 @@ input:focus {
   outline: none;
 }
 .login__text {
-  padding: 0 10%;
+  position: absolute;
+  margin-top: 3%;
+  margin-left: 8%;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1199px) {
   .login__text {
-    margin-bottom: 5px;
+    margin-left: 3%;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .login__text {
+    margin-top: 10%;
+    margin-left: 3%;
   }
 }
 .login__text img {
   max-width: 420px;
-  margin-bottom: 5px;
+  width: 100%;
+  margin: 5px 0;
 }
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 1024px) {
   .login__text img {
-    max-width: 360px;
-    margin-bottom: 0px;
+    max-width: 380px;
   }
 }
-@media only screen and (max-width: 414px) {
-  .login__text img {
-    max-width: 300px;
-  }
+.login__text2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  margin-left: 20%;
+  bottom: 10%;
 }
 @media only screen and (max-width: 1024px) {
   .login__text2 {
@@ -417,14 +439,54 @@ input:focus {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .login__text2 img {
-    max-width: 100%;
+    margin-left: 15%;
   }
 }
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 991px) {
+  .login__text2 {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 0px;
+    padding: 0 10px;
+    bottom: 0px;
+    position: relative;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
   .login__text2 {
     padding: 0 5%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.login__text2 img {
+  max-width: 450px;
+}
+@media only screen and (max-width: 1366px) {
+  .login__text2 img {
+    max-width: 450px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .login__text2 img {
+    max-width: 380px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .login__text2 img {
+    padding: 0 5px;
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .login__text2 img {
+    max-width: 240px;
+    margin-bottom: 10px;
+    width: 100%;
   }
 }
 .login--point {
@@ -468,7 +530,7 @@ input:focus {
 .login--socer {
   display: none;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .login--socer {
     display: -webkit-box;
     display: -ms-flexbox;
